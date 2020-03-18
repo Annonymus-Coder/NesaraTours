@@ -1,0 +1,52 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminMp.master.cs" Inherits="WebApplication1.Master_Page.AdminMp" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
+    <title>CSS MenuMaker</title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id='cssmenu'>
+                <ul>
+                    <li><a href="../ADMIN/Home.aspx">
+                        <span>Home</span></a>
+
+                    </li>
+                    <li class='active has-sub'><a href='#'><span>Manage Branch And Emp</span></a>
+                        <ul>
+                            <li class='last'><a href="../ADMIN/AddBranch.aspx"><span>Add Branch</span></a>
+                            </li>
+                            <li class='last'><a href="../ADMIN/EditBranch.aspx"><span>Manage Branch</span></a>
+                            <li class='last'><a href="../ADMIN/AddEmp.aspx"><span>Add Emp</span></a>
+                            <li class='last'><a href="../ADMIN/EditEmp.aspx"><span>Manage Emp</span></a>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="../ADMIN/AddPackage.aspx"><span>Add Package</span></a></li>
+                    <li class='last'><a href="../ADMIN/ManagePackage.aspx"><span>Manage Package</span></a></li>
+                    <li class='last'><a href='#'><span>User Bookings</span></a></li>
+                    <li class='last'><a href='#'><span>Employee Report</span></a></li>
+                    <li class='last'><a href='#'><span>Customer Report</span></a></li>
+                </ul>
+            </div>
+
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+</body>
+</html>

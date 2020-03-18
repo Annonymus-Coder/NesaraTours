@@ -1,0 +1,108 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ADMINMP.Master.cs" Inherits="WebApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <style>
+        body{
+            background-color:wheat;
+        }
+        h1{
+            color:red;
+            font-style:oblique;
+            text-align:center;
+        }
+        
+        .AM{
+           background-color:black;
+           
+           color:whitesmoke;
+           height:30px;
+           width:1200px;
+           margin-left:80px;
+           padding-top:10px;
+           text-align:right;
+           font-size:24px;
+           margin-right:100px;
+
+
+           
+
+       }
+      #DImg{
+         text-align:center;
+          height:100px;
+          width:600px;
+          background-repeat:no-repeat;
+          margin-left:350px;
+          
+     
+      }
+    
+       
+    
+    
+       
+    #DM{
+        height:200px;
+        background-color:whitesmoke;
+    }
+    </style>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+  
+    <form id="form1" runat="server">
+        
+
+           <h1>
+               NESARA TOURS
+           </h1>
+
+       
+        <div id="DM" >
+            <asp:Menu class="AM" runat="server" Orientation="Horizontal" OnMenuItemClick="Unnamed1_MenuItemClick"  BorderStyle="Inset" ItemWrap="True" BackColor="White" ForeColor="Black" >
+                <DynamicItemTemplate>
+                    <%# Eval("Text") %>
+                </DynamicItemTemplate>
+                <Items>
+                    <asp:MenuItem Text="|||" Value="|||" Selectable="False"></asp:MenuItem>
+                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/ADMIN/Home.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="||" Value="|||" Selectable="False"></asp:MenuItem>
+                    <asp:MenuItem Text="Manage Branch &amp; Employee" Value="Manage Dept &amp; Designation">
+                        <asp:MenuItem Text="Add Branch" Value="Add Department" NavigateUrl="~/ADMIN/AddBranch.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Edit Branch" Value="Edit Department" NavigateUrl="~/ADMIN/EditBranch.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Add Employee" Value="Add Designation" NavigateUrl="~/ADMIN/AddEmp.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/ADMIN/EditEmp.aspx" Text="Edit Employee" Value="Edit Employee"></asp:MenuItem>
+                    </asp:MenuItem>
+                    <asp:MenuItem Selectable="False" Text="||" Value="||"></asp:MenuItem>
+                    <asp:MenuItem Text="Add Package" Value="Package Details" NavigateUrl="~/ADMIN/AddPackage.aspx">
+                    </asp:MenuItem>
+                    <asp:MenuItem Selectable="False" Text="||" Value="||"></asp:MenuItem>
+                    <asp:MenuItem Text="Manage Package" Value="Manage Package"></asp:MenuItem>
+                    <asp:MenuItem Selectable="False" Text="||" Value="||"></asp:MenuItem>
+                    <asp:MenuItem Text="User Bookings" Value="User Bookings"></asp:MenuItem>
+                    <asp:MenuItem Selectable="False" Text="||" Value="||"></asp:MenuItem>
+                    <asp:MenuItem Text="Employee Reports" Value="Employee Reports"></asp:MenuItem>
+                    <asp:MenuItem Text="||" Value="||"></asp:MenuItem>
+                    <asp:MenuItem Text="Customer Reports" Value="Customer Reports"></asp:MenuItem>
+                </Items>
+                <StaticMenuStyle BackColor="White" />
+                <StaticSelectedStyle BackColor="White" CssClass="AM" ForeColor="White" HorizontalPadding="15px" ItemSpacing="2px" VerticalPadding="10px" />
+                <StaticItemTemplate>
+                    <%# Eval("Text") %>
+                </StaticItemTemplate>
+            </asp:Menu>
+
+        </div>
+       
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+       
+    </form>
+</body>
+</html>
